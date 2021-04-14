@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE biblioteca[
+<!ELEMENT biblioteca (libros, autores, editoriales)>
+<!ELEMENT libros (libro+)>
+<!ATTLIST libro isbn ID #REQUIRED>
+<!ELEMENT libro (titulo, precio, fecha_publicacion, escritores, editado, revisado)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio moneda CDATA #REQUIRED>
+<!ELEMENT fecha_publicacion (#PCDATA)>
+<!ELEMENT escritores EMPTY>
+<!ATTLIST escritores esc IDREFS #REQUIRED>
+<!ELEMENT editado EMPTY>
+<!ATTLIST editado edit IDREF #REQUIRED>
+<!ELEMENT revisado (valoracion?, comentario?)>
+<!ATTLIST revisado revis IDREFS #IMPLIED>
+<!ELEMENT valoracion EMPTY>
+<!ATTLIST valoracion valor CDATA #IMPLIED>
+<!ELEMENT comentario (#PCDATA)>
+<!ELEMENT autores (autor+)>
+<!ELEMENT autor (nombre, apellidos, email?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST autor nif ID #REQUIRED>
+<!ELEMENT editoriales (editorial+)>
+<!ELEMENT editorial (oficina, web)>
+<!ATTLIST editorial nombre ID #REQUIRED>
+<!ELEMENT oficina (#PCDATA)>
+<!ELEMENT web (#PCDATA)>
+]>
+
+<biblioteca>
+
+	<libros>
+	
+		<libro isbn="_1-55655-767-6">
+			<titulo>Fundamentos de bases de datos</titulo>
+			<precio moneda="euro">40</precio>
+			<fecha_publicacion>2003</fecha_publicacion>
+			<escritores esc="_23456788P _23456787G"/>
+			<editado edit="McGraw-Hill"/>
+			<revisado revis="_23456789N">
+				<valoracion valor="8"/>
+				<comentario>Es un libro de texto básico</comentario>
+			</revisado>
+			
+		</libro>
+		
+		<libro isbn="_2-12345-325-8">
+			<titulo>Programacion orientada a objetos</titulo>
+			<precio moneda="euro">60</precio>
+			<fecha_publicacion>2020</fecha_publicacion>
+			<escritores esc="_23456999S _23456000Z"/>
+			<editado edit="Santillana"/>
+			<revisado revis="_23456789N">
+				<valoracion valor="9"/>
+				<comentario>Es un libro de texto sobre programacion</comentario>
+			</revisado>
+			
+		</libro>
+		
+		
+		<libro isbn="_3-44444-777-2">
+			<titulo>Anatomia y Fisiologia</titulo>
+			<precio moneda="euro">80</precio>
+			<fecha_publicacion>2008</fecha_publicacion>
+			<escritores esc="_23456147Q"/>
+			<editado edit="Santillana"/>
+			<revisado revis="_23456788P _23456787G _23456789N">
+				<valoracion valor="8"/>
+				<comentario>Es un libro de texto sobre anatomia y fisiologia aplicado a medicina</comentario>
+			</revisado>
+			
+		</libro>
+		
+	</libros>
+	
+	<autores>
+	
+		<autor nif="_23456788P">
+			<nombre>Abraham</nombre>
+			<apellidos>Silberschatz</apellidos>
+			<email>silbers@hotmail.com</email>
+			
+		</autor>
+		
+		<autor nif="_23456787G">
+			<nombre>Henry</nombre>
+			<apellidos>Korth</apellidos>
+			<email>korth@hotmail.com</email>
+			
+		</autor>
+		
+		<autor nif="_23456789N">
+			<nombre>James</nombre>
+			<apellidos>Smith</apellidos>
+
+		</autor>
+		
+		<autor nif="_23456999S">
+			<nombre>Luis</nombre>
+			<apellidos>Fernandez</apellidos>
+			
+		</autor>
+		
+		<autor nif="_23456000Z">
+			<nombre>Laura</nombre>
+			<apellidos>Sanchez</apellidos>
+			<email>lausan@hotmail.com</email>
+			
+		</autor>
+		
+		<autor nif="_23456147Q">
+			<nombre>Sandra</nombre>
+			<apellidos>Gonzalez</apellidos>
+			<email>sangonz@hotmail.com</email>
+			
+		</autor>
+		
+		
+	</autores>
+	
+	<editoriales>
+	
+		<editorial nombre="McGraw-Hill">
+			<oficina>Av. Santander s/n</oficina>
+			<web>http://www.mcgrawhill.es</web>
+		</editorial>
+		
+		<editorial nombre="Santillana">
+			<oficina>Av. Sol s/n</oficina>
+			<web>http://www.santillana.es</web>
+		</editorial>
+		
+	</editoriales>
+
+</biblioteca> 
+
+
